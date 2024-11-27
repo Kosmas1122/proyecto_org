@@ -5,9 +5,7 @@ import Header from './componentes/Header/Header.js';
 function App() {
   return (
     <div className="App">
-      {Header()}          {/* Primera forma de llamar un componente de React. */}
-      <Header></Header>   {/* Segunda forma de llamar un componente de React. */}
-      <Header />          {/* Tercera forma de llamar un componente de React. */}
+      <Header />  {/* Tercera forma de llamar un componente de React. */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
