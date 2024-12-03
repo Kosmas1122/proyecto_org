@@ -4,8 +4,8 @@ import ListaOpciones from "../ListaOpciones"
 import Boton from "../Boton";
 
 const Formulario = () => {
-    return <section> 
-        <form className="formulario">
+    return <section className="formulario"> 
+        <form>
             <h2> Rellena el formulario para crear el colaborador. </h2>
             <CampoTexto titulo="Nombre" placeholder="Ingresar nombre" />
             <CampoTexto titulo="Puesto" placeholder="Ingresar puesto" />
