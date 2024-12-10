@@ -59,7 +59,7 @@ function App() {
   return (
     <div>
       <Header />  {/* Tercera forma de llamar un componente de React. */}
-      { mostrarFormulario ? <Formulario /> : <></> }
+      { mostrarFormulario ? <Formulario equipos={equipos.map((equipo) => equipo.titulo)} /> : <></> }
       <MiOrg cambiarMostrar={cambiarMostrar} />
       
       {/* Se crea un componente Equipo por cada objeto equipo: */}
