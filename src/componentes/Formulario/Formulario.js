@@ -12,6 +12,8 @@ const Formulario = (props) => {
     const [foto, setFoto] = useState("");
     const [equipo, setEquipo] = useState("");
 
+    // Ejemplo de Destructuración:
+    const {registrarColaborador}= props
 
     const manejarEnvio = (e) => {
         e.preventDefault();
@@ -24,7 +26,8 @@ const Formulario = (props) => {
             foto: foto,
             equipo: equipo
         };
-        console.log(datosAEnviar);
+        //console.log(datosAEnviar);
+        registrarColaborador(datosAEnviar);
 
         /* El objeto anterior también se pudo haber escrito así:
             let datosAEnviar = {

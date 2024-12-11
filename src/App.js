@@ -8,12 +8,20 @@ import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
 
 function App() {
-
   const [mostrarFormulario, actualizarMostrar] = useState(false);
+  const [colaboradores, actualizarColaboradores] = useState([]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   };
+
+  // Registrar colaborador:
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo Colaborador: ", colaborador);
+    // Spread Operator:
+    actualizarColaboradores([...colaboradores, colaborador]);
+
+  }
 
   // Lista de equipos:
   const equipos = [
@@ -59,7 +67,11 @@ function App() {
   return (
     <div>
       <Header />  {/* Tercera forma de llamar un componente de React. */}
-      { mostrarFormulario ? <Formulario equipos={equipos.map((equipo) => equipo.titulo)} /> : <></> }
+      { mostrarFormulario ? <Formulario 
+          equipos={equipos.map((equipo) => equipo.titulo)}
+          registrarColaborador={registrarColaborador} 
+          /> : <></> }
+      
       <MiOrg cambiarMostrar={cambiarMostrar} />
       
       {/* Se crea un componente Equipo por cada objeto equipo: */}
