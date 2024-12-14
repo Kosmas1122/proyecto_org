@@ -76,7 +76,12 @@ function App() {
       
       {/* Se crea un componente Equipo por cada objeto equipo: */}
       {
-        equipos.map((equipo) => <Equipo datos={equipo} key={equipo.titulo} />)
+        equipos.map((equipo) => <Equipo 
+          datos={equipo} 
+          key={equipo.titulo} 
+          colaboradores={colaboradores}
+          />
+        )
       }
 
     </div>
