@@ -6,10 +6,24 @@ import Header from './componentes/Header/Header.js';
 import Formulario from './componentes/Formulario/Formulario.js';
 import MiOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
+import Footer from './componentes/Footer';
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false);
-  const [colaboradores, actualizarColaboradores] = useState([]);
+  const [colaboradores, actualizarColaboradores] = useState([
+    {
+      equipo: "Front End",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "David",
+      puesto: "Desarrollador"
+    },
+    {
+      equipo: "UX y Diseño",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "Diana",
+      puesto: "Desarrolladora"
+    }
+  ]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
@@ -83,6 +97,8 @@ function App() {
           />
         )
       }
+
+      <Footer />
 
     </div>
   );
