@@ -58,7 +58,11 @@ function App() {
     console.log("Nuevo Colaborador: ", colaborador);
     // Spread Operator:
     actualizarColaboradores([...colaboradores, colaborador]);
+  }
 
+  // Eliminar Colaborador:
+  const eliminarColaborador = () => {
+    console.log("Eliminar Colaborador.");
   }
 
   // Lista de equipos:
@@ -118,6 +122,7 @@ function App() {
           datos={equipo} 
           key={equipo.titulo} 
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+          eliminarColaborador = {eliminarColaborador}
           />
         )
       }
