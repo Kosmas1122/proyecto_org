@@ -18,6 +18,30 @@ function App() {
       puesto: "Desarrollador"
     },
     {
+      equipo: "Front End",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "Luke",
+      puesto: "Desarrollador"
+    },
+    {
+      equipo: "Front End",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "María",
+      puesto: "Desarrolladora"
+    },
+    {
+      equipo: "Devops",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "Carlitos",
+      puesto: "Devops"
+    },
+    {
+      equipo: "Data Science",
+      foto: "https://github.com/kosmas1122.png",
+      nombre: "Sarah",
+      puesto: "Analista de Datos"
+    },
+    {
       equipo: "UX y Diseño",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Diana",
