@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuid } from 'uuid'; // Para crear IDs.
 import './App.css';
 
 /* Importación de Componentes: */
@@ -12,36 +13,42 @@ function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false);
   const [colaboradores, actualizarColaboradores] = useState([
     {
+      id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "David",
       puesto: "Desarrollador"
     },
     {
+      id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Luke",
       puesto: "Desarrollador"
     },
     {
+      id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "María",
       puesto: "Desarrolladora"
     },
     {
+      id: uuid(),
       equipo: "Devops",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Carlitos",
       puesto: "Devops"
     },
     {
+      id: uuid(),
       equipo: "Data Science",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Sarah",
       puesto: "Analista de Datos"
     },
     {
+      id: uuid(),
       equipo: "UX y Diseño",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Diana",
@@ -52,36 +59,43 @@ function App() {
   // Lista de equipos:
   const [equipos, actualizarEquipos] = useState([
     {
+      id: uuid(),
       titulo: "Programación",
       colorPrimario: "#57C278",
       colorSecundario: "#D9F7E9"
     },
     {
+      id: uuid(),
       titulo: "Front End",
       colorPrimario: "#82CFFA",
       colorSecundario: "#E8F8FF"
     },
     {
+      id: uuid(),
       titulo: "Data Science",
       colorPrimario: "#A6D157",
       colorSecundario: "#F0F8E2"
     },
     {
+      id: uuid(),
       titulo: "Devops",
       colorPrimario: "#E06B69",
       colorSecundario: "#FDE7E8"
     },
     {
+      id: uuid(),
       titulo: "UX y Diseño",
       colorPrimario: "#DB6EBF",
       colorSecundario: "#FAE9F5"
     },
     {
+      id: uuid(),
       titulo: "Móvil",
       colorPrimario: "#FFBA05",
       colorSecundario: "#FFF5D9"
     },
     {
+      id: uuid(),
       titulo: "Innovación y Gestión",
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF"
@@ -105,10 +119,10 @@ function App() {
   }
 
   // Actualizar color de equipo:
-  const actualizarColor = (color, titulo) => {
-    console.log("Actualizar: ", color, titulo);
+  const actualizarColor = (color, id) => {
+    console.log("Actualizar: ", color, id);
     const equiposActualizados = equipos.map((equipo) => {
-      if(equipo.titulo === titulo){
+      if(equipo.id === id){
         equipo.colorPrimario = color;
       }
       return equipo;
