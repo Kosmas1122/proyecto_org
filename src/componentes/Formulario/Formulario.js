@@ -12,8 +12,12 @@ const Formulario = (props) => {
     const [foto, setFoto] = useState("");
     const [equipo, setEquipo] = useState("");
 
+    const [titulo, actualizarTitulo] = useState("");
+    const [color, actualizarColor] = useState("");
+
+
     // Ejemplo de Destructuración:
-    const {registrarColaborador}= props
+    const {registrarColaborador, crearEquipo}= props
 
     const manejarEnvio = (e) => {
         e.preventDefault();
@@ -39,9 +43,17 @@ const Formulario = (props) => {
             Internamente JS sabe que la clave y el valor tendrán
             el mismo nombre.
         */
-    }
+    };
+
+
+    const manejarNuevoEquipo = (e) => {
+        e.preventDefault();
+        crearEquipo({titulo, colorPrimario: color});
+    };
+
 
     return <section className="formulario"> 
+        {/* Formulario para Colaboradores: */}
         <form onSubmit={manejarEnvio}>
             <h2> Rellena el formulario para crear el colaborador. </h2>
             <CampoTexto 
@@ -71,6 +83,26 @@ const Formulario = (props) => {
                 equipos = {props.equipos}
             />
             <Boton texto="Crear"/>
+        </form>
+
+        {/* Formulario para Equipos: */}
+        <form onSubmit={manejarNuevoEquipo}>
+            <h2> Rellena el formulario para crear el equipo. </h2>
+            <CampoTexto 
+                titulo="Título" 
+                placeholder="Ingresar título" 
+                required={true} 
+                valor={titulo} 
+                actualizarValor={actualizarTitulo}
+            />
+            <CampoTexto 
+                titulo="Color" 
+                placeholder="Ingresar el color en hex" 
+                required 
+                valor={color} 
+                actualizarValor={actualizarColor}
+            />
+            <Boton texto="Registrar Equipo"/>
         </form>
     </section>
 };

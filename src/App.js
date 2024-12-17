@@ -134,6 +134,13 @@ function App() {
   };
 
 
+  // Crear Equipo:
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo);
+    actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid()}]);
+  };
+
+
   // Se puede usar un Operador Ternario:
   // condicion ? seMuestra : noSeMuestra;
   return (
@@ -142,6 +149,7 @@ function App() {
       { mostrarFormulario ? <Formulario 
           equipos={equipos.map((equipo) => equipo.titulo)}
           registrarColaborador={registrarColaborador} 
+          crearEquipo={crearEquipo}
           /> : <></> }
       
       <MiOrg cambiarMostrar={cambiarMostrar} />
