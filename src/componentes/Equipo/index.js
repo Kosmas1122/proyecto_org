@@ -4,7 +4,7 @@ import Colaborador from "../Colaborador";
 const Equipo = (props) => {
     // Concepto de Destructuración:
     const {colorPrimario, colorSecundario, titulo} = props.datos
-    const {colaboradores, eliminarColaborador} = props
+    const {colaboradores, eliminarColaborador, actualizarColor} = props
 
     const obj = { backgroundColor: colorSecundario }
 
@@ -18,7 +18,7 @@ const Equipo = (props) => {
                     className="input-color"
                     value={colorSecundario}
                     onChange={(evento) => {
-                        console.log(evento.target.value);
+                        actualizarColor(evento.target.value, titulo);
                     }}
                 />
                 <h3 style={estiloTitulo} > {titulo} </h3>
