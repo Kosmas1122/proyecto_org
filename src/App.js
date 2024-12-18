@@ -10,49 +10,57 @@ import Equipo from './componentes/Equipo';
 import Footer from './componentes/Footer';
 
 function App() {
-  const [mostrarFormulario, actualizarMostrar] = useState(true);
+  const [mostrarFormulario, actualizarMostrar] = useState(false);
+  
+  // Lista de Colaboradores:
   const [colaboradores, actualizarColaboradores] = useState([
     {
       id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "David",
-      puesto: "Desarrollador"
+      puesto: "Desarrollador",
+      fav: true
     },
     {
       id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Luke",
-      puesto: "Desarrollador"
+      puesto: "Desarrollador",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/kosmas1122.png",
       nombre: "María",
-      puesto: "Desarrolladora"
+      puesto: "Desarrolladora",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Devops",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Carlitos",
-      puesto: "Devops"
+      puesto: "Devops",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Data Science",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Sarah",
-      puesto: "Analista de Datos"
+      puesto: "Analista de Datos",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "UX y Diseño",
       foto: "https://github.com/kosmas1122.png",
       nombre: "Diana",
-      puesto: "Desarrolladora"
+      puesto: "Desarrolladora",
+      fav: false
     }
   ]);
 
@@ -140,6 +148,17 @@ function App() {
     actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid()}]);
   };
 
+  const like = (id)=> {
+    console.log("like: ", id)
+    const colaboradoresActualizados = colaboradores.map((colaborador) => {
+      if (colaborador.id === id) {
+        colaborador.fav = !colaborador.fav;
+      }
+      return colaborador;
+    });
+
+    actualizarColaboradores(colaboradoresActualizados);
+  }
 
   // Se puede usar un Operador Ternario:
   // condicion ? seMuestra : noSeMuestra;
@@ -162,6 +181,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador = {eliminarColaborador}
           actualizarColor = {actualizarColor}
+          like = {like}
           />
         )
       }
